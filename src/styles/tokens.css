@@ -1,0 +1,33 @@
+/* ==========================================================================
+   TOKENS — paleta, tipografia e medidas do site.
+   Mudou aqui, mudou no site inteiro.
+   ========================================================================== */
+
+:root {
+  /* Cores */
+  --preto: #08080a;
+  --grafite: #0e0e11;
+  --card: #141418;
+  --linha: rgba(255, 255, 255, 0.09);
+
+  --branco: #ffffff;
+  --cinza: #9c9ca6;
+  --cinza-2: #5e5e68;
+
+  --roxo: #8b5cf6;
+  --roxo-claro: #b79cff;
+  --roxo-escuro: #6d3ff0;
+  --roxo-glow: rgba(139, 92, 246, 0.24);
+
+  /* Tipografia */
+  --fonte-display: "Archivo", system-ui, -apple-system, sans-serif;
+  --fonte-mono: "JetBrains Mono", ui-monospace, "Courier New", monospace;
+
+  /* Layout */
+  --largura-max: 1240px;
+  --padding-lateral: 24px;
+  --altura-header: 74px;
+
+  /* Transições */
+  --transicao: 0.28s cubic-bezier(0.2, 0.7, 0.2, 1);
+}

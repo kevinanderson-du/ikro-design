@@ -1,0 +1,140 @@
+/* ==========================================================================
+   BASE — reset, tipografia e utilitários globais
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--preto);
+  color: var(--branco);
+  font-family: var(--fonte-display);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--roxo-claro);
+  outline-offset: 3px;
+}
+
+/* -------------------------------- utilitários ------------------------------ */
+
+.mono {
+  font-family: var(--fonte-mono);
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 0 var(--padding-lateral);
+}
+
+.sec {
+  padding: 96px 0;
+}
+
+.sec-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 34px;
+}
+
+.h2 {
+  font-size: clamp(30px, 4.2vw, 52px);
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+
+.p {
+  color: var(--cinza);
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 46ch;
+  margin-top: 14px;
+}
+
+.link-mais {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  color: var(--cinza);
+  transition: var(--transicao);
+}
+
+.link-mais:hover {
+  color: var(--roxo-claro);
+  gap: 12px;
+}
+
+.dica {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--cinza-2);
+  margin-top: 26px;
+}
+
+@media (max-width: 860px) {
+  .sec {
+    padding: 70px 0;
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --padding-lateral: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}

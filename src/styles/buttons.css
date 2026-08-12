@@ -1,0 +1,55 @@
+/* ==========================================================================
+   BOTÕES
+   .btn-outline  → traçado roxo (principal do site)
+   .btn-solid    → preenchido roxo (ações finais: WhatsApp, orçamento)
+   .btn-ghost    → discreto, borda cinza (ação secundária)
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  padding: 15px 24px;
+  border: 1px solid transparent;
+  transition: var(--transicao);
+  white-space: nowrap;
+}
+
+.btn-sm {
+  padding: 11px 18px;
+  font-size: 10.5px;
+}
+
+.btn-outline {
+  border-color: var(--roxo);
+  color: var(--branco);
+}
+
+.btn-outline:hover {
+  background: var(--roxo);
+  transform: translateY(-2px);
+}
+
+.btn-solid {
+  background: var(--roxo);
+  color: #fff;
+}
+
+.btn-solid:hover {
+  background: var(--roxo-claro);
+  color: #0b0b0e;
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  border-color: var(--linha);
+  color: var(--cinza);
+}
+
+.btn-ghost:hover {
+  border-color: var(--branco);
+  color: var(--branco);
+}

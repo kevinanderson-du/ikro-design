@@ -1,0 +1,36 @@
+/* ==========================================================================
+   ESTEIRAS (marquee) — usadas na faixa de clientes e nos projetos em destaque.
+   Regra: o conteúdo é duplicado no JSX e a trilha anda -50%, criando o loop.
+   Passar o mouse pausa a animação (importante para conseguir clicar nos cards).
+   ========================================================================== */
+
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.track-logos {
+  animation: desliza 46s linear infinite;
+}
+
+.track-cards {
+  animation: desliza 68s linear infinite;
+  gap: 18px;
+  padding: 4px 9px;
+}
+
+@keyframes desliza {
+  to {
+    transform: translateX(-50%);
+  }
+}

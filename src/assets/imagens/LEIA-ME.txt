@@ -1,0 +1,21 @@
+COLOQUE AQUI AS IMAGENS DO SITE
+
+Sugestão de nomes e tamanhos:
+
+  hero-camisa.png       1200x1400   foto do banner (de preferência PNG sem fundo)
+  ícaro-retrato.jpg      900x1100   foto da seção "Sobre mim"
+  projetos/atletico.jpg 1000x1250   capa de cada projeto
+  clientes/vasco.png     300x120    logos da esteira (PNG transparente, branco)
+  mockups/adidas.jpg     800x800    capa de cada mockup
+
+Depois, importe no arquivo de dados correspondente. Exemplo em src/data/config.js:
+
+  import fotoHero from "../assets/imagens/hero-camisa.png";
+
+  export const CONFIG = {
+    ...
+    imagens: { hero: fotoHero, sobre: "" },
+  };
+
+Enquanto o campo estiver vazio, o site mostra um marcador tracejado no lugar
+da imagem — o layout não quebra.

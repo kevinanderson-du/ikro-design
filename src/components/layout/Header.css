@@ -1,0 +1,133 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 60;
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.header.is-solid {
+  background: rgba(8, 8, 10, 0.88);
+  backdrop-filter: blur(14px);
+  border-bottom-color: var(--linha);
+}
+
+.header-in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: var(--altura-header);
+}
+
+.nav-desk {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  position: relative;
+  padding: 6px 0;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--cinza);
+  transition: color 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link.is-active {
+  color: var(--branco);
+}
+
+.nav-link.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--roxo);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+}
+
+.burger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--branco);
+  transition: 0.25s ease;
+}
+
+/* -------------------------------- mobile ---------------------------------- */
+
+.nav-mob {
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 var(--padding-lateral);
+  background: rgba(8, 8, 10, 0.97);
+  backdrop-filter: blur(14px);
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.nav-mob.is-open {
+  max-height: 440px;
+  padding: 10px var(--padding-lateral) 26px;
+  border-bottom: 1px solid var(--linha);
+}
+
+.nav-mob-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0;
+  text-align: left;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--linha);
+}
+
+.nav-mob-link.is-active {
+  color: var(--roxo-claro);
+}
+
+.nav-mob-num {
+  font-size: 10px;
+  color: var(--cinza-2);
+}
+
+.nav-mob .btn {
+  justify-content: center;
+  margin-top: 18px;
+}
+
+@media (max-width: 860px) {
+  .nav-desk {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+  .nav-mob {
+    display: flex;
+  }
+  .header-right .btn-outline {
+    display: none;
+  }
+}

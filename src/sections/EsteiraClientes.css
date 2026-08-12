@@ -1,0 +1,50 @@
+.faixa-clientes {
+  padding: 34px 0 40px;
+  background: var(--grafite);
+  border-bottom: 1px solid var(--linha);
+}
+
+.faixa-clientes .wrap {
+  margin-bottom: 22px;
+}
+
+.cliente {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 210px;
+  height: 56px;
+  padding: 0 26px;
+  border-right: 1px solid var(--linha);
+}
+
+.cliente-nome {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  color: var(--cinza-2);
+  transition: color 0.25s ease;
+}
+
+.cliente:hover .cliente-nome {
+  color: var(--branco);
+}
+
+.cliente img {
+  width: auto;
+  max-height: 34px;
+  filter: grayscale(1) brightness(1.6);
+  opacity: 0.6;
+  transition: 0.25s ease;
+}
+
+.cliente:hover img {
+  filter: none;
+  opacity: 1;
+}
+
+@media (max-width: 560px) {
+  .cliente {
+    min-width: 170px;
+  }
+}

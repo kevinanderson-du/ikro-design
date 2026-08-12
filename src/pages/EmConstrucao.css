@@ -1,0 +1,25 @@
+.sec-stub {
+  min-height: 70vh;
+  padding: 190px 0 140px;
+}
+
+.stub-eyebrow {
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  color: var(--cinza-2);
+}
+
+.stub-h2 {
+  margin: 16px 0 4px;
+}
+
+.stub-p {
+  max-width: 52ch;
+}
+
+.stub-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}

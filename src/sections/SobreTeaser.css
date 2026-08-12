@@ -1,0 +1,100 @@
+.sec-sobre {
+  background: var(--grafite);
+  border-top: 1px solid var(--linha);
+  border-bottom: 1px solid var(--linha);
+}
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr 0.7fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.sobre-foto {
+  position: relative;
+}
+
+.box-seguidores {
+  position: absolute;
+  left: -14px;
+  bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 14px 18px;
+  background: var(--roxo);
+  box-shadow: 0 18px 40px rgba(139, 92, 246, 0.28);
+}
+
+.box-num {
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.box-lbl {
+  font-size: 8.5px;
+  letter-spacing: 0.16em;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.sobre-txt .h2 {
+  margin-top: 16px;
+}
+
+.sobre-txt .btn {
+  margin-top: 26px;
+}
+
+.sobre-numeros {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.num {
+  padding-left: 16px;
+  border-left: 2px solid var(--roxo);
+}
+
+.num-valor {
+  display: block;
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.num-lbl {
+  display: block;
+  margin-top: 8px;
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  line-height: 1.6;
+  white-space: pre-line;
+  color: var(--cinza);
+}
+
+@media (max-width: 1080px) {
+  .sobre-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sobre-numeros {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 26px 40px;
+  }
+  .num {
+    flex: 1 1 160px;
+  }
+}
+
+@media (max-width: 860px) {
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}

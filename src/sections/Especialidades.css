@@ -1,0 +1,52 @@
+.esp-h2 {
+  margin: 14px 0 46px;
+}
+
+/* grade de 1px: o "gap" é o próprio fundo aparecendo entre os cards */
+.esp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--linha);
+  border: 1px solid var(--linha);
+}
+
+.esp {
+  padding: 32px 26px 36px;
+  background: var(--preto);
+  transition: background 0.3s ease;
+}
+
+.esp:hover {
+  background: var(--card);
+}
+
+.esp-ico {
+  margin-bottom: 22px;
+  color: var(--roxo-claro);
+}
+
+.esp-titulo {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.esp-txt {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--cinza);
+}
+
+@media (max-width: 1080px) {
+  .esp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .esp-grid {
+    grid-template-columns: 1fr;
+  }
+}

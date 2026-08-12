@@ -1,0 +1,22 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-txt {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.logo-dot {
+  color: var(--roxo);
+}
+
+.logo-sub {
+  font-size: 8px;
+  letter-spacing: 0.52em;
+  color: var(--cinza-2);
+  margin-top: 3px;
+}

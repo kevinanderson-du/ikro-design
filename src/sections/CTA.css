@@ -1,0 +1,57 @@
+.sec-cta {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+.cta-glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 420px;
+  background: radial-gradient(ellipse, rgba(139, 92, 246, 0.2), transparent 68%);
+  filter: blur(10px);
+}
+
+.cta-in {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: end;
+}
+
+.h1-cta {
+  margin-top: 16px;
+  font-size: clamp(38px, 6vw, 74px);
+  font-weight: 900;
+  line-height: 0.94;
+  letter-spacing: -0.025em;
+}
+
+.cta-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.cta-mail {
+  margin-top: 4px;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  color: var(--cinza-2);
+}
+
+.cta-mail:hover {
+  color: var(--branco);
+}
+
+@media (max-width: 860px) {
+  .cta-in {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}

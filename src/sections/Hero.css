@@ -1,0 +1,149 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 150px 0 90px;
+  border-bottom: 1px solid var(--linha);
+}
+
+/* malha sutil ao fundo, some nas bordas */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.032) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.032) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 100%);
+}
+
+.hero-glow {
+  position: absolute;
+  top: 8%;
+  right: -6%;
+  width: 620px;
+  height: 620px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--roxo-glow), transparent 65%);
+  filter: blur(20px);
+}
+
+.hero-in {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-nome {
+  margin: 18px 0 20px;
+  font-size: clamp(40px, 10.5vw, 120px);
+  font-weight: 900;
+  line-height: 0.86;
+  letter-spacing: -0.035em;
+}
+
+.hero-nome span {
+  display: block;
+}
+
+.hero-cargo {
+  font-size: 10.5px;
+  letter-spacing: 0.24em;
+  color: var(--roxo-claro);
+}
+
+.hero-resumo {
+  max-width: 34ch;
+  margin: 10px 0 30px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--cinza);
+}
+
+.hero-img {
+  position: relative;
+  width: 500px;
+  
+}
+
+.hero-img::after {
+  content: "";
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  bottom: -14px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--roxo), transparent);
+}
+
+.hero-side {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  font-size: 9.5px;
+  letter-spacing: 0.34em;
+  color: var(--cinza-2);
+}
+
+.hero-scroll {
+  position: absolute;
+  left: var(--padding-lateral);
+  bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 9.5px;
+  letter-spacing: 0.28em;
+  color: var(--cinza-2);
+}
+
+.hero-scroll-line {
+  width: 54px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--roxo), transparent);
+}
+
+.reveal {
+  animation: sobe 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.reveal-2 {
+  animation-delay: 0.12s;
+}
+
+@keyframes sobe {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .hero {
+    padding: 120px 0 70px;
+  }
+  .hero-in {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .hero-resumo {
+    max-width: none;
+  }
+  .hero-side,
+  .hero-scroll {
+    display: none;
+  }
+}
+
+.espaço {
+  margin-top: -20px; /* Puxa o elemento para cima */
+  
+}
