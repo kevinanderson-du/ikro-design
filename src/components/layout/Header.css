@@ -54,6 +54,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
+  
 }
 
 .burger {
@@ -115,6 +116,7 @@
 .nav-mob .btn {
   justify-content: center;
   margin-top: 18px;
+  
 }
 
 @media (max-width: 860px) {
@@ -129,5 +131,6 @@
   }
   .header-right .btn-outline {
     display: none;
+    
   }
 }

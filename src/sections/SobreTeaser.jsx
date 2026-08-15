@@ -16,14 +16,24 @@ export default function SobreTeaser({ ir }) {
         <div className="sobre-foto">
           <Media src={CONFIG.imagens.sobre} alt="Ícaro Augusto" hint="FOTO PESSOAL · 900×1100" ratio="4 / 5" />
 
+          {/* === INÍCIO DO BOX LIQUID GLASS === */}
           <div className="box-seguidores">
-            <span className="box-num">+{CONFIG.seguidores}</span>
-            <span className="box-lbl mono">
-              SEGUIDORES
-              <br />
-              NO INSTAGRAM
-            </span>
+            <div className="box-textos">
+              <span className="box-num">+{CONFIG.seguidores}</span>
+              <span className="box-lbl-destaque">SEGUIDORES</span>
+              <span className="box-lbl">NAS REDES SOCIAIS</span>
+            </div>
+            
+            {/* Ícones das redes sociais */}
+            <div className="box-icones">
+              <img src="/public/imagens/insta.svg" alt="Instagram" className="icone-social" />
+              <img src="/public/imagens/youtube.svg" alt="YouTube" className="icone-social-youtube" />
+              <img src="/public/imagens/tiktok.svg" alt="TikTok" className="icone-social" />
+              <img src="/public/imagens/x.svg" alt="X" className="icone-social-x" />
+            </div>
           </div>
+          {/* === FIM DO BOX LIQUID GLASS === */}
+          
         </div>
 
         <div className="sobre-txt">

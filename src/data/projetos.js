@@ -6,12 +6,12 @@ export const PROJETOS = [
   {
     id: "atletico-mineiro",
     tag: "FUTEBOL",
-    titulo: "ATLÉTICO MINEIRO",
+    titulo: "crusero",
     sub: "Uniforme 2026",
     cliente: "Clube Atlético Mineiro",
     ano: "2026",
     servicos: ["Design de Uniforme", "Direção Criativa", "Pesquisa"],
-    capa: "",
+    capa: "/imagens/teste-kaio-jorge.jpg",
     galeria: [], // imagens da página interna do projeto
     destaque: true,
   },

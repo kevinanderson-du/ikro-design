@@ -15,30 +15,131 @@
   position: relative;
 }
 
+/* =========================================
+   A MÁGICA DO LIQUID GLASS COMEÇA AQUI 
+========================================= */
+
 .box-seguidores {
   position: absolute;
-  left: -14px;
+  left: -20px; /* Jogado um pouquinho mais pro lado */
   bottom: 26px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  padding: 14px 18px;
-  background: var(--roxo);
-  box-shadow: 0 18px 40px rgba(139, 92, 246, 0.28);
+  gap: 16px;
+  padding: 24px 32px; /* Caixa um pouco maior para respirar */
+  border-radius: 20px;
+
+  /* Fundo escuro com desfoque de vidro (substitui o fundo roxo chapado) */
+  background: rgba(20, 20, 25, 0.45); 
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  /* Bordinha estilo neon */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 2px solid var(--roxo); 
+  border-left: 2px solid var(--roxo);   
+  
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.box-textos {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .box-num {
-  font-size: 26px;
+  font-size: 46px;
   font-weight: 900;
+  color: var(--roxo); /* Agora o número é roxo */
   line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
+}
+
+.box-lbl-destaque {
+  font-size: 15px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.05em;
 }
 
 .box-lbl {
-  font-size: 8.5px;
-  letter-spacing: 0.16em;
-  line-height: 1.5;
+  font-size: 14px;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.05em;
 }
+
+.box-icones {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.icone-social {
+  width: 32px; /* Tamanho total da bolinha */
+  height: 32px;
+  background-color: #ffffff; /* Pinta o fundo de branco */
+  border-radius: 50%; /* Deixa perfeitamente redondo */
+  
+  /* O SEGREDO: O padding cria um respiro interno, diminuindo o logo e deixando a borda branca grossa */
+  padding: 4px; 
+  box-sizing: border-box; /* Garante que o padding não quebre o tamanho de 32px */
+  object-fit: contain; /* Garante que o logo SVG não fique esticado ou distorcido */
+  
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.icone-social-youtube {
+  width: 32px; /* Tamanho total da bolinha */
+  height: 32px;
+  background-color: #ffffff; /* Pinta o fundo de branco */
+  border-radius: 50%; /* Deixa perfeitamente redondo */
+  
+  /* O SEGREDO: O padding cria um respiro interno, diminuindo o logo e deixando a borda branca grossa */
+  padding: 5px; 
+  box-sizing: border-box; /* Garante que o padding não quebre o tamanho de 32px */
+  object-fit: contain; /* Garante que o logo SVG não fique esticado ou distorcido */
+  
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.icone-social-x {
+  width: 32px; /* Tamanho total da bolinha */
+  height: 32px;
+  background-color: #ffffff; /* Pinta o fundo de branco */
+  border-radius: 50%; /* Deixa perfeitamente redondo */
+  
+  /* O SEGREDO: O padding cria um respiro interno, diminuindo o logo e deixando a borda branca grossa */
+  padding: 6px; 
+  box-sizing: border-box; /* Garante que o padding não quebre o tamanho de 32px */
+  object-fit: contain; /* Garante que o logo SVG não fique esticado ou distorcido */
+  
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.icone-social:hover {
+  transform: scale(1.1); /* Dá o zoomzinho */
+  background-color: var(--roxo); /* BÔNUS: Quando passar o mouse, a bolinha branca vira roxa! */
+}
+
+.icone-social-youtube:hover {
+  transform: scale(1.1); /* Dá o zoomzinho */
+  background-color: var(--roxo); /* BÔNUS: Quando passar o mouse, a bolinha branca vira roxa! */
+}
+
+.icone-social-x:hover {
+  transform: scale(1.1); /* Dá o zoomzinho */
+  background-color: var(--roxo); /* BÔNUS: Quando passar o mouse, a bolinha branca vira roxa! */
+}
+
+/* =========================================
+   FIM DO LIQUID GLASS 
+========================================= */
 
 .sobre-txt .h2 {
   margin-top: 16px;

@@ -26,6 +26,7 @@
 .btn-outline {
   border-color: var(--roxo);
   color: var(--branco);
+  border-radius: 50px;
 }
 
 .btn-outline:hover {
@@ -36,6 +37,7 @@
 .btn-solid {
   background: var(--roxo);
   color: #fff;
+  border-radius: 50px;
 }
 
 .btn-solid:hover {
@@ -47,6 +49,7 @@
 .btn-ghost {
   border-color: var(--linha);
   color: var(--cinza);
+  border-radius: 50px;
 }
 
 .btn-ghost:hover {

@@ -1,89 +1,116 @@
+/* =========================================
+   ESTRUTURA DO CARD HORIZONTAL
+========================================= */
+
 .proj {
-  flex: 0 0 300px;
-  width: 300px;
-  text-align: left;
-  background: var(--card);
-  border: 1px solid var(--linha);
-  transition: transform 0.35s ease, border-color 0.35s ease;
-}
-
-.proj:hover {
-  transform: translateY(-6px);
-  border-color: rgba(139, 92, 246, 0.55);
-}
-
-.proj-media {
   position: relative;
+  width: 420px; /* Define a largura fixa para a esteira do marquee */
+  border-radius: 20px;
   overflow: hidden;
+  flex-shrink: 0; /* Impede o carrossel de esmagar o card */
+  
+  /* Reset de botão */
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  display: block;
+  border: 2px solid transparent; /* Borda invisível para evitar pulos */
+  transition: border-color 0.3s ease; /* Faz a cor aparecer suavemente */
 }
 
-.proj-media .media-img {
-  transition: transform 0.6s ease;
+/* Quando o mouse passar por cima do card... */
+.proj:hover {
+  border-color: var(--roxo); /* Usa a variável roxa do seu projeto */
 }
 
-.proj:hover .proj-media .media-img {
-  transform: scale(1.05);
+/* O componente Media já deve estar preenchendo 100%, então só garantimos que fique no fundo */
+.proj-media {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
 }
 
-/* faixa roxa que corre na base do card, lembrando a barra da gola de uma camisa */
-.proj-stripe {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 3px;
-  background: var(--roxo);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-
-.proj:hover .proj-stripe {
-  transform: scaleX(1);
-}
-
+/* A caixa mágica que flutua por cima da imagem */
 .proj-info {
-  padding: 18px 20px 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  
+  /* Flexbox para alinhar textos na esquerda e o ícone na direita, tudo embaixo */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 24px;
+  
+  /* O degradê que escurece o rodapé da imagem para dar leitura */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 65%);
+}
+
+/* =========================================
+   TIPOGRAFIA E AJUSTES DE TEXTO
+========================================= */
+
+.proj-textos {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* Espaço entre a tag, título e subtítulo */
 }
 
 .proj-tag {
-  font-size: 9.5px;
-  letter-spacing: 0.2em;
-  color: var(--roxo-claro);
+  color: #a3a3a3;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .proj-titulo {
-  margin-top: 9px;
-  font-size: 20px;
-  font-weight: 900;
-  letter-spacing: -0.01em;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
 }
 
 .proj-sub {
-  margin-top: 4px;
-  font-size: 12.5px;
-  color: var(--cinza);
+  color: #cccccc;
+  font-size: 14px;
+  margin: 0;
 }
 
+/* Estilo para a setinha no canto */
 .proj-cta {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 7px;
-  margin-top: 16px;
-  font-size: 9.5px;
-  letter-spacing: 0.18em;
-  color: var(--cinza-2);
-  transition: 0.25s ease;
+  justify-content: center;
+  gap: 8px; /* Espaço entre o texto e a seta */
+  
+  /* IMPORTANTE: Se tiver algum 'width: 32px' ou 'height: 32px' aí, apague! Deixe automático: */
+  width: auto; 
+  height: auto;
+  
+  padding: 8px 16px; /* Dá aquele respiro em volta do texto e da seta */
+  border-radius: 50px;
+  
+  /* Seus outros estilos de cor e fundo continuam normais... */
+   
+  color: #ffffff;
 }
 
+/* O SEGREDO ESTÁ AQUI: Adicione essa regra nova logo abaixo do .proj-cta */
+/* Isso proíbe o navegador de "esmagar" a sua setinha! */
+.proj-cta svg {
+  flex-shrink: 0; 
+  display: block;
+}
+
+/* Quando o mouse passa no card, o fundo do botão fica roxo */
 .proj:hover .proj-cta {
-  color: var(--branco);
-  gap: 11px;
-}
-
-@media (max-width: 560px) {
-  .proj {
-    flex-basis: 250px;
-    width: 250px;
-  }
+  background: var(--roxo); /* Se a variável não pegar, use a cor hexadecimal, ex: #8b5cf6 */
+  color: #ffffff; /* Garante que o texto e a seta continuem brancos */
 }

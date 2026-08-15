@@ -21,7 +21,7 @@ export const CONFIG = {
 
   instagram: "https://www.instagram.com/ikrodesign",
   instagramHandle: "@ikrodesign",
-  seguidores: "75K",
+  seguidores: "112K",
 
   whatsapp: "5537988549065", // apenas números, com DDI
   whatsappMsg: "Olá, Ícaro! Vi seu site e quero falar sobre um projeto.",
@@ -31,6 +31,6 @@ export const CONFIG = {
 
   imagens: {
     hero: "",  // PNG sem fundo, ~1200x1400
-    sobre: "", // retrato vertical, ~900x1100
+    sobre: "/imagens/icaro.jpg", // retrato vertical, ~900x1100
   },
 };
