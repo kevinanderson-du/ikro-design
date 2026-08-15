@@ -26,10 +26,10 @@ export default function SobreTeaser({ ir }) {
             
             {/* Ícones das redes sociais */}
             <div className="box-icones">
-              <img src="/public/imagens/insta.svg" alt="instagram" className="icone-social" />
-              <img src="/public/imagens/youtube.svg" alt="youTube" className="icone-social-youtube" />
-              <img src="/public/imagens/tiktok.svg" alt="tiktok" className="icone-social" />
-              <img src="/public/imagens/x.svg" alt="x" className="icone-social-x" />
+              <img src="/imagens/insta.svg" alt="instagram" className="icone-social" />
+              <img src="/imagens/youtube.svg" alt="youTube" className="icone-social-youtube" />
+              <img src="/imagens/tiktok.svg" alt="tiktok" className="icone-social" />
+              <img src="/imagens/x.svg" alt="x" className="icone-social-x" />
             </div>
           </div>
           {/* === FIM DO BOX LIQUID GLASS === */}
