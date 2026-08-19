@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import "./styles/efeitos.css";
 
 /* Estilos globais — a ordem importa: tokens primeiro */
 import "./styles/tokens.css";

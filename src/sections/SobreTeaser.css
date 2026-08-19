@@ -25,10 +25,10 @@
   bottom: 26px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 24px 32px; /* Caixa um pouco maior para respirar */
+  gap: 8px;
+  padding: 16px 20px; /* Caixa um pouco maior para respirar */
   border-radius: 20px;
-
+  max-width: 250px;
   /* Fundo escuro com desfoque de vidro (substitui o fundo roxo chapado) */
   background: rgba(20, 20, 25, 0.45); 
   backdrop-filter: blur(16px);
@@ -36,8 +36,8 @@
 
   /* Bordinha estilo neon */
   border: 1px solid rgba(255, 255, 255, 0.15);
-  border-bottom: 2px solid var(--roxo); 
-  border-left: 2px solid var(--roxo);   
+  
+    
   
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }

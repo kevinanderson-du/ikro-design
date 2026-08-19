@@ -1,0 +1,52 @@
+/* ==========================================================================
+   EFEITOS REUTILIZÁVEIS — só CSS, sem mudar o JSX.
+   .borda-girando  → traçado roxo correndo em volta do card
+   .flutuando      → card subindo e descendo de leve
+   ========================================================================== */
+
+/* permite animar o ângulo do gradiente */
+@property --angulo {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.borda-girando {
+  position: relative;
+}
+
+.borda-girando::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;          /* acompanha o arredondamento do card */
+  padding: var(--traco, 1.5px);    /* espessura do traçado */
+  background: conic-gradient(
+    from var(--angulo),
+    transparent 0 52%,
+    var(--roxo) 68%,
+    var(--roxo-claro) 78%,
+    transparent 90%
+  );
+  /* recorta o miolo: só a moldura do gradiente fica visível */
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: girar var(--giro, 4.5s) linear infinite;
+  pointer-events: none;
+}
+
+.flutuando {
+  animation: flutuar var(--flutuacao, 5.5s) ease-in-out infinite;
+}
+
+@keyframes girar {
+  to { --angulo: 360deg; }
+}
+
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}

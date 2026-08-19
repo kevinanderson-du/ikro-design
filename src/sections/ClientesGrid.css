@@ -1,0 +1,58 @@
+.cli-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin: 26px 0 30px;
+  background: var(--linha);
+  border: 1px solid var(--linha);
+}
+
+.cli-item {
+  display: grid;
+  place-items: center;
+  min-height: 96px;
+  padding: 16px 12px;
+  background: var(--preto);
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.cli-item:hover {
+  background: var(--card);
+}
+
+.cli-nome {
+  font-family: var(--fonte-display);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.1em;
+  color: var(--cinza-2);
+  transition: color 0.25s ease;
+}
+
+.cli-item:hover .cli-nome {
+  color: var(--branco);
+}
+
+.cli-item img {
+  width: auto;
+  max-height: 42px;
+  filter: grayscale(1) brightness(1.7);
+  opacity: 0.6;
+  transition: 0.25s ease;
+}
+
+.cli-item:hover img {
+  filter: none;
+  opacity: 1;
+}
+
+@media (max-width: 560px) {
+  .cli-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cli-item {
+    min-height: 84px;
+  }
+}

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
@@ -29,26 +29,52 @@ export default function App() {
   const [aba, setAba] = useState(inicial.aba);
   const [projeto, setProjeto] = useState(inicial.projeto);
 
+  /* guarda a seção de destino até a tela nova estar montada */
+  const ancoraPendente = useRef(null);
+
+  /* espera a tela renderizar antes de rolar */
+  const rolarPara = useCallback((ancora) => {
+    window.setTimeout(() => {
+      const alvo = ancora ? document.getElementById(ancora) : null;
+      if (alvo) alvo.scrollIntoView({ behavior: "smooth", block: "start" });
+      else window.scrollTo({ top: 0 });
+    }, 80);
+  }, []);
+
   /* botões voltar/avançar do navegador */
   useEffect(() => {
     const aoMudar = () => {
-      const { aba, projeto } = lerHash();
-      setAba(aba);
-      setProjeto(projeto);
-      window.scrollTo({ top: 0 });
+      const atual = lerHash();
+      setAba(atual.aba);
+      setProjeto(atual.projeto);
+      rolarPara(ancoraPendente.current);
+      ancoraPendente.current = null;
     };
     window.addEventListener("hashchange", aoMudar);
     return () => window.removeEventListener("hashchange", aoMudar);
-  }, []);
+  }, [rolarPara]);
 
-  const ir = useCallback((id) => {
-    setProjeto(null);
-    setAba(id);
-    window.location.hash = id === "inicio" ? "" : id;
-    window.scrollTo({ top: 0 });
-  }, []);
+  const ir = useCallback(
+    (id, ancora = null) => {
+      ancoraPendente.current = ancora;
+      setProjeto(null);
+      setAba(id);
+
+      const novoHash = id === "inicio" ? "" : id;
+      const hashAtual = window.location.hash.replace("#", "");
+
+      if (hashAtual === novoHash) {
+        rolarPara(ancora);           // já estamos nesta aba: só rola
+        ancoraPendente.current = null;
+      } else {
+        window.location.hash = novoHash; // o hashchange acima faz a rolagem
+      }
+    },
+    [rolarPara]
+  );
 
   const abrirProjeto = useCallback((id) => {
+    ancoraPendente.current = null;
     setProjeto(id);
     setAba("portfolio");
     window.location.hash = `portfolio/${id}`;

@@ -1,0 +1,265 @@
+.sobre-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 150px 0 80px;
+  border-bottom: 1px solid var(--linha);
+}
+
+.sobre-hero-glow {
+  position: absolute;
+  top: 4%;
+  right: -8%;
+  width: 640px;
+  height: 640px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--roxo-glow), transparent 66%);
+  filter: blur(24px);
+}
+
+.sobre-hero-in {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 0.78fr 1.05fr;
+  gap: 44px;
+  align-items: start;
+}
+
+/* ------------------------------- coluna texto ------------------------------ */
+
+.sh-marcador {
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  color: var(--cinza-2);
+}
+
+.sh-marcador-num {
+  font-weight: 500;
+  color: var(--roxo-claro);
+}
+
+.sh-titulo {
+  margin: 18px 0 26px;
+  font-size: clamp(46px, 7.4vw, 104px);
+  font-weight: 900;
+  line-height: 0.86;
+  letter-spacing: -0.035em;
+}
+
+.sh-subtitulo {
+  max-width: 26ch;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--linha);
+  font-size: clamp(15px, 1.5vw, 19px);
+  font-weight: 600;
+  line-height: 1.35;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.sh-paragrafos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 22px 0 32px;
+  max-width: 44ch;
+}
+
+.sh-paragrafos p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--cinza);
+}
+
+/* ------------------------------ ficha técnica ------------------------------ */
+
+.sh-ficha {
+  padding-left: 40px;
+  border-left: 1px solid var(--linha);
+}
+
+.sh-nome {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--roxo-claro);
+}
+
+.sh-cargos {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 10px;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--cinza);
+}
+
+.sh-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 30px;
+}
+
+.ficha {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--linha);
+}
+
+.ficha-ico {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  color: var(--roxo-claro);
+  transition: var(--transicao);
+}
+
+.ficha-txt {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  line-height: 1.5;
+}
+
+.ficha-titulo {
+  color: var(--branco);
+}
+
+.ficha-sub {
+  color: var(--cinza-2);
+}
+
+.ficha-link:hover .ficha-ico {
+  background: var(--roxo);
+  border-color: var(--roxo);
+  color: #fff;
+}
+
+.ficha-link:hover .ficha-titulo {
+  color: var(--roxo-claro);
+}
+
+/* --------------------------------- retrato --------------------------------- */
+
+.sh-foto {
+  position: relative;
+  padding-right: 62px;
+}
+
+/* brilho roxo por trás do PNG recortado */
+.sh-foto::before {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 24%;
+  top: 12%;
+  bottom: 6%;
+  background: radial-gradient(ellipse at 50% 60%, rgba(139, 92, 246, 0.3), transparent 70%);
+  filter: blur(30px);
+}
+
+.sh-foto .media-img,
+.sh-foto .media-slot {
+  position: relative;
+  z-index: 2;
+}
+
+.sh-tracos {
+  position: absolute;
+  inset: 0 62px 0 0;
+  z-index: 3;
+  width: calc(100% - 62px);
+  height: 100%;
+  stroke: var(--roxo-claro);
+  stroke-width: 1.4;
+  pointer-events: none;
+}
+
+.sh-mira {
+  position: absolute;
+  z-index: 4;
+  color: var(--roxo);
+  opacity: 0.9;
+}
+
+.sh-mira-topo {
+  top: 0;
+  right: 0;
+}
+
+.sh-lateral {
+  position: absolute;
+  right: 0;
+  top: 22%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: right;
+  font-size: 9.5px;
+  letter-spacing: 0.22em;
+  color: var(--cinza-2);
+}
+
+/* ------------------------------- responsivo -------------------------------- */
+
+@media (max-width: 1080px) {
+  .sobre-hero-in {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .sh-foto {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    max-width: 460px;
+    padding-right: 74px;
+  }
+  .sh-ficha {
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: 860px) {
+  .sobre-hero {
+    padding: 118px 0 60px;
+  }
+  .sobre-hero-in {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .sh-foto {
+    max-width: none;
+  }
+  .sh-ficha {
+    padding-left: 0;
+    padding-top: 26px;
+    border-left: none;
+    border-top: 1px solid var(--linha);
+  }
+  .sh-subtitulo,
+  .sh-paragrafos {
+    max-width: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .sh-foto {
+    padding-right: 46px;
+  }
+  .sh-tracos {
+    inset: 0 46px 0 0;
+    width: calc(100% - 46px);
+  }
+  .sh-lateral {
+    top: 14%;
+    font-size: 8.5px;
+    letter-spacing: 0.18em;
+  }
+}

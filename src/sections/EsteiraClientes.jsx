@@ -7,7 +7,7 @@ export default function EsteiraClientes() {
   const lista = [...CLIENTES, ...CLIENTES]; // duplicado para o loop infinito
 
   return (
-    <section className="faixa-clientes">
+    <section className="faixa-clientes" id="clientes">
       <div className="wrap">
         <Eyebrow>CLIENTES &amp; COLABORAÇÕES</Eyebrow>
       </div>

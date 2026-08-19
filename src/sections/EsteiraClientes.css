@@ -1,4 +1,6 @@
 .faixa-clientes {
+  scroll-margin-top: calc(var(--altura-header) + 20px);
+
   padding: 34px 0 40px;
   background: var(--grafite);
   border-bottom: 1px solid var(--linha);

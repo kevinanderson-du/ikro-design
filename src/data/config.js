@@ -29,8 +29,10 @@ export const CONFIG = {
   email: "contato@ikrodesign.com",
   local: "Ipatinga, MG — Brasil",
 
+
   imagens: {
     hero: "",  // PNG sem fundo, ~1200x1400
     sobre: "/imagens/icaro.jpg", // retrato vertical, ~900x1100
+    retrato: "", // aba SOBRE — PNG sem fundo, ~1000x1200
   },
 };

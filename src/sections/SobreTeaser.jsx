@@ -17,7 +17,7 @@ export default function SobreTeaser({ ir }) {
           <Media src={CONFIG.imagens.sobre} alt="Ícaro Augusto" hint="FOTO PESSOAL · 900×1100" ratio="4 / 5" />
 
           {/* === INÍCIO DO BOX LIQUID GLASS === */}
-          <div className="box-seguidores">
+          <div className="box-seguidores borda-girando flutuando">
             <div className="box-textos">
               <span className="box-num">+{CONFIG.seguidores}</span>
               <span className="box-lbl-destaque">SEGUIDORES</span>

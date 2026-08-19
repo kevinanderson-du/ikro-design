@@ -1,0 +1,25 @@
+.sobre-blocos {
+  background: var(--grafite);
+  border-bottom: 1px solid var(--linha);
+}
+
+.sobre-blocos-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+/* cada bloco (clientes / habilidades) alinha o botão no fim */
+.bloco {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (max-width: 860px) {
+  .sobre-blocos-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
