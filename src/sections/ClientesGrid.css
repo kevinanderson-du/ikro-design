@@ -1,24 +1,18 @@
+/* Grade solta: logos respirando no fundo, sem caixa nem divisória */
+
 .cli-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  margin: 26px 0 30px;
-  background: var(--linha);
-  border: 1px solid var(--linha);
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+  width: 100%; 
+  margin: 20px 0 26px;
 }
 
 .cli-item {
   display: grid;
   place-items: center;
-  min-height: 96px;
-  padding: 16px 12px;
-  background: var(--preto);
+  min-height: 64px;
   text-align: center;
-  transition: background 0.3s ease;
-}
-
-.cli-item:hover {
-  background: var(--card);
 }
 
 .cli-nome {
@@ -37,9 +31,10 @@
 
 .cli-item img {
   width: auto;
-  max-height: 42px;
+  max-height: 62px;
+  /* mesmo tratamento da esteira da home: apagada, acende no hover */
   filter: grayscale(1) brightness(1.7);
-  opacity: 0.6;
+  opacity: 0.55;
   transition: 0.25s ease;
 }
 
@@ -48,11 +43,12 @@
   opacity: 1;
 }
 
-@media (max-width: 560px) {
+@media (max-width: 1080px) {
   .cli-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px 16px;
   }
-  .cli-item {
-    min-height: 84px;
+  .cli-item img {
+    max-height: 38px;
   }
 }

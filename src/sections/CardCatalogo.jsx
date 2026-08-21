@@ -12,7 +12,7 @@ export default function CardCatalogo({ projeto, onAbrir }) {
       aria-label={`Abrir projeto ${projeto.titulo}`}
     >
       <div className="cat-thumb">
-        <Media src={projeto.capa} alt={projeto.titulo} hint="CAPA · 1000×1250" ratio="4 / 5" />
+        <Media src={projeto.capa} alt={projeto.titulo} hint="CAPA · 1000×1250" ratio="4 / 3" />
       </div>
 
       <div className="cat-veu">

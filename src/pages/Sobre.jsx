@@ -11,14 +11,14 @@ export default function Sobre({ ir }) {
     <>
       <SobreHero />
 
-      <section className="sec sobre-blocos">
+      <section className="sobre-blocos">
         <div className="wrap sobre-blocos-grid">
           <ClientesGrid ir={ir} />
           
         </div>
       </section>
 
-      <CTA />
+      
     </>
   );
 }

@@ -1,13 +1,16 @@
 .sobre-blocos {
+  padding-top: 56px;
+  padding-bottom: 72px;
   background: var(--grafite);
   border-bottom: 1px solid var(--linha);
 }
 
 .sobre-blocos-grid {
   display: grid;
-  grid-template-columns: 1.25fr 1fr;
+  grid-template-columns: 1fr;
   gap: 56px;
   align-items: start;
+  align-self: stretch;
 }
 
 /* cada bloco (clientes / habilidades) alinha o botão no fim */

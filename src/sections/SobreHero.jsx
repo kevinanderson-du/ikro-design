@@ -94,7 +94,7 @@ export default function SobreHero() {
             src={CONFIG.imagens.retrato || CONFIG.imagens.sobre}
             alt={CONFIG.nome.join(" ")}
             hint="RETRATO SEM FUNDO · PNG · 1000×1200"
-            ratio="1 / 1.2"
+            ratio="1 / 1.1"
             cover={false}
           />
 

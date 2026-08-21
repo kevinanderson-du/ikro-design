@@ -9,8 +9,7 @@ export const PERFIL = {
   subtitulo: "Designer gráfico especializado em design esportivo e identidade visual.",
 
   paragrafos: [
-    "Atuo há mais de 5 anos transformando ideias em projetos visuais de impacto para marcas e clubes dentro e fora do Brasil.",
-    "Meu foco é unir criatividade, estratégia e cultura esportiva para criar identidades fortes e memoráveis.",
+    
   ],
 
   /* AAAA-MM-DD — a idade é calculada sozinha, nunca fica desatualizada */
@@ -24,15 +23,7 @@ export const PERFIL = {
 
 /* Barra de habilidades: o número é o % que a barra preenche.
    Para tirar ou trocar uma habilidade, edite só esta lista. */
-export const HABILIDADES = [
-  { nome: "DESIGN DE UNIFORMES", nivel: 95 },
-  { nome: "IDENTIDADE VISUAL", nivel: 90 },
-  { nome: "DIREÇÃO CRIATIVA", nivel: 90 },
-  { nome: "MOCKUPS & 3D", nivel: 85 },
-  { nome: "BRANDING", nivel: 85 },
-  { nome: "DIAGRAMAÇÃO", nivel: 80 },
-  { nome: "ILUSTRAÇÃO", nivel: 75 },
-];
+
 
 /* Calcula a idade a partir da data de nascimento */
 export function idadeAtual(nascimento = PERFIL.nascimento) {
