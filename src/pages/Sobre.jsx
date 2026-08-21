@@ -14,7 +14,7 @@ export default function Sobre({ ir }) {
       <section className="sec sobre-blocos">
         <div className="wrap sobre-blocos-grid">
           <ClientesGrid ir={ir} />
-          <Habilidades />
+          
         </div>
       </section>
 
