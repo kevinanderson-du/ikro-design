@@ -7,6 +7,7 @@ import Portfolio from "./pages/Portfolio";
 import Projeto from "./pages/Projeto";
 import Mockups from "./pages/Mockups";
 import Contato from "./pages/Contato";
+import MockupProduto from "./pages/MockupProduto";
 
 /* ==========================================================================
    NAVEGAÇÃO
@@ -81,16 +82,25 @@ export default function App() {
     window.scrollTo({ top: 0 });
   }, []);
 
+    const abrirMockup = useCallback((id) => {
+    ancoraPendente.current = null;
+    setProjeto(id);
+    setAba("mockups");
+    window.location.hash = `mockups/${id}`;
+    window.scrollTo({ top: 0 });
+  }, []);
+
   const renderizarTela = () => {
     if (aba === "portfolio" && projeto) return <Projeto id={projeto} ir={ir} />;
-
+    if (aba === "mockups" && projeto)
+      return <MockupProduto id={projeto} ir={ir} abrirMockup={abrirMockup} />;
     switch (aba) {
       case "sobre":
         return <Sobre ir={ir} />;
       case "portfolio":
                 return <Portfolio ir={ir} abrirProjeto={abrirProjeto} />;
       case "mockups":
-        return <Mockups ir={ir} />;
+        return <Mockups ir={ir} abrirMockup={abrirMockup} />;
       case "contato":
         return <Contato ir={ir} />;
       default:

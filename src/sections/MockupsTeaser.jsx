@@ -1,8 +1,9 @@
-import { MOCKUPS } from "../data/mockups";
+import { mockupsDestaque, formatarPreco } from "../data/mockups";
 import Eyebrow from "../components/ui/Eyebrow";
 import Media from "../components/ui/Media";
 import Seta from "../components/ui/Seta";
 import "./MockupsTeaser.css";
+
 
 /* Seção simples, sem esteira: 3 cards + botão para a aba MOCKUPS */
 export default function MockupsTeaser({ ir }) {
@@ -28,13 +29,13 @@ export default function MockupsTeaser({ ir }) {
         </div>
 
         <div className="mock-cards">
-          {MOCKUPS.map((m) => (
+          {mockupsDestaque().map((m) => (
             <button className="mock" key={m.id} onClick={() => ir("mockups")}>
               <Media src={m.capa} alt={m.nome} hint="MOCKUP · 800×800" ratio="1 / 1" />
               <div className="mock-info">
                 <h3 className="mock-nome">{m.nome}</h3>
-                <span className="mock-pack mono">{m.pack}</span>
-                <span className="mock-preco">{m.preco}</span>
+                                <span className="mock-pack mono">{m.categoria}</span>
+                <span className="mock-preco">{formatarPreco(m.precoPessoal)}</span>
               </div>
             </button>
           ))}

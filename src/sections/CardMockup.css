@@ -1,0 +1,91 @@
+.mk-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  text-align: left;
+  background: var(--card);
+  border: 1px solid var(--linha);
+  border-radius: 20px;
+  transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.mk-card:hover,
+.mk-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--roxo);
+  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.35), 0 18px 38px rgba(0, 0, 0, 0.45);
+}
+
+.mk-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.mk-thumb .media-img {
+  transition: transform 0.6s ease;
+}
+
+.mk-card:hover .mk-thumb .media-img {
+  transform: scale(1.04);
+}
+
+.mk-etiqueta {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 12px;
+  font-size: 8.5px;
+  letter-spacing: 0.18em;
+  color: var(--branco);
+  background: rgba(8, 8, 10, 0.7);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--linha);
+  border-radius: 999px;
+}
+
+.mk-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 14px;
+  padding: 16px 18px 18px;
+}
+
+.mk-nome {
+  font-size: 13.5px;
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+}
+
+.mk-rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.mk-preco {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--roxo-claro);
+}
+
+.mk-seta {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  color: var(--cinza);
+  border: 1px solid var(--linha);
+  border-radius: 50%;
+  transition: var(--transicao);
+}
+
+.mk-card:hover .mk-seta {
+  color: #fff;
+  background: var(--roxo);
+  border-color: var(--roxo);
+}

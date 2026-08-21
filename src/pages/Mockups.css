@@ -1,0 +1,146 @@
+/* --------------------------------- topo ----------------------------------- */
+
+.mkp-topo {
+  position: relative;
+  overflow: hidden;
+  padding: 140px 0 44px;
+}
+
+.mkp-glow {
+  position: absolute;
+  top: -14%;
+  left: 24%;
+  width: 640px;
+  height: 520px;
+  background: radial-gradient(ellipse, var(--roxo-glow), transparent 68%);
+  filter: blur(30px);
+}
+
+.mkp-topo-in {
+  position: relative;
+}
+
+.mkp-marcador {
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  color: var(--cinza-2);
+}
+
+.mkp-marcador-num {
+  color: var(--roxo-claro);
+}
+
+.mkp-titulo {
+  margin: 14px 0 22px;
+  font-size: clamp(10px, 9vw, 100px);
+  font-weight: 900;
+  line-height: 0.84;
+  letter-spacing: -0.04em;
+}
+
+.mkp-titulo-roxo {
+  color: var(--roxo-claro);
+}
+
+.mkp-desc {
+  max-width: 52ch;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--cinza);
+}
+
+.mkp-vantagens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 40px;
+  margin: 30px 0 26px;
+}
+
+.mkp-vantagem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mkp-vantagem-ico {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  color: var(--roxo-claro);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: 50%;
+}
+
+.mkp-vantagem strong {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+}
+
+.mkp-vantagem-txt {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  color: var(--cinza-2);
+}
+
+.mkp-resumo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 34px;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--cinza-2);
+}
+
+.mkp-resumo b {
+  font-weight: 500;
+  color: var(--branco);
+}
+
+/* ------------------------------- catálogo --------------------------------- */
+
+.mkp-catalogo {
+  padding-bottom: 90px;
+}
+
+.mkp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.mkp-vazio {
+  padding: 70px 0;
+  text-align: center;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  color: var(--cinza-2);
+}
+
+@media (max-width: 1080px) {
+  .mkp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .mkp-topo {
+    padding: 112px 0 32px;
+  }
+  .mkp-desc {
+    max-width: none;
+  }
+  .mkp-vantagens {
+    gap: 14px 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .mkp-grid {
+    grid-template-columns: 1fr;
+  }
+}
