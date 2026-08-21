@@ -79,3 +79,30 @@ export const PROJETOS = [
 
 export const projetosDestaque = () => PROJETOS.filter((p) => p.destaque);
 export const acharProjeto = (id) => PROJETOS.find((p) => p.id === id) || null;
+
+
+/* ==========================================================================
+   CATEGORIAS DO FILTRO
+   Sai sozinho da lista acima: cadastrou um projeto com uma "tag" nova,
+   o botão do filtro aparece automaticamente. Não precisa mexer aqui.
+   ========================================================================== */
+export const CATEGORIAS = ["TODOS", ...new Set(PROJETOS.map((p) => p.tag))];
+
+export const ORDENACOES = [
+  { id: "recentes", label: "MAIS RECENTES" },
+  { id: "antigos", label: "MAIS ANTIGOS" },
+  { id: "az", label: "A — Z" },
+];
+
+/* Filtra e ordena o catálogo do portfólio */
+export function listarProjetos(categoria = "TODOS", ordem = "recentes") {
+  const filtrados =
+    categoria === "TODOS" ? [...PROJETOS] : PROJETOS.filter((p) => p.tag === categoria);
+
+  return filtrados.sort((a, b) => {
+    if (ordem === "az") return a.titulo.localeCompare(b.titulo, "pt-BR");
+    const anoA = Number(a.ano) || 0;
+    const anoB = Number(b.ano) || 0;
+    return ordem === "antigos" ? anoA - anoB : anoB - anoA;
+  });
+}

@@ -1,0 +1,173 @@
+/* --------------------------------- topo ----------------------------------- */
+
+.port-topo {
+  position: relative;
+  overflow: hidden;
+  padding: 140px 0 44px;
+}
+
+.port-glow {
+  position: absolute;
+  top: -10%;
+  left: 30%;
+  width: 620px;
+  height: 520px;
+  background: radial-gradient(ellipse, var(--roxo-glow), transparent 68%);
+  filter: blur(30px);
+}
+
+.port-topo-in {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr 1fr;
+  gap: 44px;
+  align-items: end;
+}
+
+.port-marcador {
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  color: var(--cinza-2);
+}
+
+.port-marcador-num {
+  color: var(--roxo-claro);
+}
+
+.port-titulo {
+  margin-top: 14px;
+  font-size: clamp(52px, 8vw, 116px);
+  font-weight: 900;
+  line-height: 0.84;
+  letter-spacing: -0.04em;
+}
+
+.port-desc {
+  max-width: 34ch;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--cinza);
+}
+
+.port-link {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 20px;
+  text-align: left;
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  line-height: 1.6;
+  color: var(--roxo-claro);
+  transition: var(--transicao);
+}
+
+.port-link span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--branco);
+}
+
+.port-link:hover span {
+  gap: 12px;
+  color: var(--roxo-claro);
+}
+
+.port-numeros {
+  display: flex;
+  gap: 34px;
+  justify-content: flex-end;
+}
+
+.port-num {
+  padding-top: 14px;
+  border-top: 2px solid var(--roxo);
+}
+
+.port-num-valor {
+  display: block;
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.port-num-lbl {
+  display: block;
+  margin-top: 8px;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  line-height: 1.6;
+  white-space: pre-line;
+  color: var(--cinza);
+}
+
+/* ------------------------------- catálogo --------------------------------- */
+
+.port-catalogo {
+  padding-bottom: 90px;
+}
+
+.port-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.port-vazio {
+  padding: 70px 0;
+  text-align: center;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  color: var(--cinza-2);
+}
+
+/* ------------------------------- responsivo -------------------------------- */
+
+@media (max-width: 1080px) {
+  .port-topo-in {
+    grid-template-columns: 1fr 1fr;
+  }
+  .port-marca {
+    grid-column: 1 / -1;
+  }
+  .port-numeros {
+    justify-content: flex-start;
+  }
+  .port-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .port-topo {
+    padding: 112px 0 32px;
+  }
+  .port-topo-in {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+  .port-desc {
+    max-width: none;
+  }
+  .port-numeros {
+    gap: 24px;
+  }
+  .port-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .port-numeros {
+    flex-wrap: wrap;
+    gap: 18px 28px;
+  }
+  .port-grid {
+    grid-template-columns: 1fr;
+  }
+}

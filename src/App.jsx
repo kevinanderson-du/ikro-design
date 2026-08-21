@@ -88,7 +88,7 @@ export default function App() {
       case "sobre":
         return <Sobre ir={ir} />;
       case "portfolio":
-        return <Portfolio ir={ir} />;
+                return <Portfolio ir={ir} abrirProjeto={abrirProjeto} />;
       case "mockups":
         return <Mockups ir={ir} />;
       case "contato":

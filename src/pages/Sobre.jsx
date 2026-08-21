@@ -1,6 +1,6 @@
 import SobreHero from "../sections/SobreHero";
 import ClientesGrid from "../sections/ClientesGrid";
-import Habilidades from "../sections/Habilidades";
+
 import CTA from "../sections/CTA";
 import "./Sobre.css";
 

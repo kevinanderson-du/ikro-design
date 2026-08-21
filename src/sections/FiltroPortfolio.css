@@ -1,0 +1,140 @@
+.filtro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 18px 0;
+  border-top: 1px solid var(--linha);
+  border-bottom: 1px solid var(--linha);
+}
+
+.filtro-esq {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.filtro-lbl {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--cinza);
+  white-space: nowrap;
+}
+
+.filtro-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--roxo);
+  box-shadow: 0 0 10px var(--roxo);
+}
+
+.filtro-botoes {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.filtro-btn {
+  padding: 9px 16px;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--cinza);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  transition: var(--transicao);
+  white-space: nowrap;
+}
+
+.filtro-btn:hover {
+  color: var(--branco);
+  border-color: var(--linha);
+}
+
+.filtro-btn.is-ativo {
+  color: var(--branco);
+  border-color: var(--roxo);
+  background: rgba(139, 92, 246, 0.12);
+}
+
+/* --------------------------------- direita -------------------------------- */
+
+.filtro-dir {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.filtro-total {
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  color: var(--cinza-2);
+  white-space: nowrap;
+}
+
+.filtro-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--cinza);
+}
+
+.filtro-select select {
+  appearance: none;
+  padding: 10px 34px 10px 16px;
+  font-family: var(--fonte-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--branco);
+  background: transparent;
+  border: 1px solid var(--linha);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: var(--transicao);
+}
+
+.filtro-select select:hover {
+  border-color: var(--roxo);
+}
+
+.filtro-select select option {
+  background: var(--card);
+  color: var(--branco);
+}
+
+.filtro-select svg {
+  position: absolute;
+  right: 14px;
+  pointer-events: none;
+}
+
+@media (max-width: 860px) {
+  .filtro {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .filtro-esq {
+    gap: 14px;
+  }
+  /* os botões viram uma faixa que rola de lado */
+  .filtro-botoes {
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .filtro-botoes::-webkit-scrollbar {
+    display: none;
+  }
+  .filtro-dir {
+    justify-content: space-between;
+    width: 100%;
+  }
+}

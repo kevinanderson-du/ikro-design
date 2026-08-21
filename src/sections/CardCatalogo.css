@@ -1,0 +1,101 @@
+.cat-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-align: left;
+  background: var(--card);
+  border: 1px solid var(--linha);
+  border-radius: 14px;
+  transition: border-color 0.35s ease, transform 0.35s ease;
+}
+
+.cat-card:hover,
+.cat-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--roxo);
+  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.35), 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.cat-thumb .media-img,
+.cat-thumb .media-slot {
+  transition: transform 0.6s ease, filter 0.4s ease;
+}
+
+.cat-card:hover .cat-thumb .media-img,
+.cat-card:focus-visible .cat-thumb .media-img {
+  transform: scale(1.06);
+}
+
+/* --------------------------- véu com as informações ------------------------ */
+
+.cat-veu {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 22px;
+  background: linear-gradient(180deg, rgba(8, 8, 10, 0.35) 0%, rgba(8, 8, 10, 0.9) 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.cat-card:hover .cat-veu,
+.cat-card:focus-visible .cat-veu {
+  opacity: 1;
+}
+
+/* o texto sobe junto com o véu */
+.cat-veu > * {
+  transform: translateY(10px);
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.cat-card:hover .cat-veu > *,
+.cat-card:focus-visible .cat-veu > * {
+  transform: none;
+}
+
+.cat-veu > *:nth-child(2) { transition-delay: 0.04s; }
+.cat-veu > *:nth-child(3) { transition-delay: 0.08s; }
+.cat-veu > *:nth-child(4) { transition-delay: 0.12s; }
+
+.cat-tag {
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  color: var(--roxo-claro);
+}
+
+.cat-titulo {
+  font-size: 21px;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.cat-sub {
+  font-size: 12.5px;
+  color: var(--cinza);
+}
+
+.cat-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 12px;
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  color: var(--branco);
+}
+
+/* no toque não existe hover: o véu fica sempre visível no celular */
+@media (hover: none) {
+  .cat-veu {
+    opacity: 1;
+  }
+  .cat-veu > * {
+    transform: none;
+  }
+}
