@@ -1,5 +1,5 @@
-/* Ícones das especialidades. Para criar um novo, adicione um case aqui
-   e use o nome dele em src/data/especialidades.js */
+/* Ícones do site. Para criar um novo, adicione um case aqui e use o nome
+   dele em src/data/especialidades.js ou direto no componente. */
 export default function Icone({ tipo, size = 26 }) {
   const props = {
     width: size,
@@ -14,6 +14,7 @@ export default function Icone({ tipo, size = 26 }) {
   };
 
   switch (tipo) {
+    /* ---------------------------- especialidades --------------------------- */
     case "camisa":
       return (
         <svg {...props}>
@@ -34,7 +35,9 @@ export default function Icone({ tipo, size = 26 }) {
           <path d="M4 7.5l8 4.5 8-4.5M12 12v9" />
         </svg>
       );
-      case "local":
+
+    /* ------------------------- ficha técnica (sobre) ----------------------- */
+    case "local":
       return (
         <svg {...props}>
           <path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z" />
@@ -62,6 +65,21 @@ export default function Icone({ tipo, size = 26 }) {
           <path d="M3.6 6.5L12 13l8.4-6.5" />
         </svg>
       );
+    case "whatsapp":
+      return (
+        <svg {...props}>
+          <path d="M20 11.5a8 8 0 01-11.9 7L4 20l1.6-4a8 8 0 1114.4-4.5z" />
+          <path d="M9.2 9.4c.2 1.2 1 2.4 1.8 3.2.8.8 2 1.6 3.2 1.8l.9-1.1 1.6.8-.4 1.3c-1.9.5-4.2-.9-5.6-2.3-1.4-1.4-2.8-3.7-2.3-5.6l1.3-.4.8 1.6-1.3 .7z" />
+        </svg>
+      );
+    case "instagram":
+      return (
+        <svg {...props}>
+          <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+          <circle cx="12" cy="12" r="4" />
+          <circle cx="17" cy="7" r="1" fill="currentColor" stroke="none" />
+        </svg>
+      );
     case "download":
       return (
         <svg {...props}>
@@ -69,6 +87,7 @@ export default function Icone({ tipo, size = 26 }) {
         </svg>
       );
 
+    /* ---------------------------- direção criativa ------------------------- */
     default:
       return (
         <svg {...props}>

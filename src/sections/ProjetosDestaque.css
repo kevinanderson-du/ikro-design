@@ -1,3 +1,76 @@
 .sec-projetos {
   padding-bottom: 74px;
 }
+
+/* ==========================================================================
+   ESTEIRA ARRASTÁVEL
+   É uma área com rolagem de verdade — quem move é o JS (useEsteira.js),
+   por isso dá para pegar com o mouse, com o dedo ou com o trackpad.
+   ========================================================================== */
+
+.esteira {
+  overflow-x: auto;
+  overflow-y: hidden;
+  cursor: grab;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  touch-action: pan-x pan-y;
+}
+
+.esteira::-webkit-scrollbar {
+  display: none;
+}
+
+.esteira:active {
+  cursor: grabbing;
+}
+
+.esteira-trilha {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  padding: 4px 9px;
+}
+
+/* o card não pode ser "arrastado" como imagem */
+.esteira img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+/* ------------------------------- controles -------------------------------- */
+
+.est-controles {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.est-seta {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: var(--cinza);
+  border: 1px solid var(--linha);
+  border-radius: 50%;
+  transition: var(--transicao);
+}
+
+.est-seta:hover {
+  color: #fff;
+  background: var(--roxo);
+  border-color: var(--roxo);
+}
+
+.est-controles .link-mais {
+  margin-left: 8px;
+}
+
+@media (max-width: 560px) {
+  .est-controles .est-seta {
+    display: none; /* no celular o dedo já resolve */
+  }
+}

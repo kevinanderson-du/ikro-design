@@ -1,0 +1,273 @@
+.ctt {
+  position: relative;
+  overflow: hidden;
+  padding: 140px 0 100px;
+}
+
+.ctt-glow {
+  position: absolute;
+  top: 10%;
+  left: -6%;
+  width: 620px;
+  height: 560px;
+  background: radial-gradient(ellipse, var(--roxo-glow), transparent 68%);
+  filter: blur(30px);
+}
+
+.ctt-in {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.05fr 1.15fr 0.75fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* -------------------------------- chamada --------------------------------- */
+
+.ctt-chamada {
+  position: relative;
+}
+
+.ctt-marcador {
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  color: var(--cinza-2);
+}
+
+.ctt-marcador-num {
+  color: var(--roxo-claro);
+}
+
+.ctt-titulo {
+  margin: 16px 0 30px;
+  font-size: clamp(38px, 5.4vw, 74px);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+}
+
+.ctt-titulo-roxo {
+  color: var(--roxo-claro);
+}
+
+.ctt-mira {
+  display: block;
+  color: var(--roxo);
+  opacity: 0.85;
+}
+
+.ctt-palavras {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 20px 0 0;
+  padding: 20px 0 0;
+  border-top: 1px solid var(--linha);
+  list-style: none;
+  font-size: 9.5px;
+  letter-spacing: 0.22em;
+  color: var(--cinza-2);
+}
+
+/* --------------------------- títulos das colunas --------------------------- */
+
+.ctt-h2 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  color: var(--cinza);
+}
+
+.ctt-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--roxo);
+  box-shadow: 0 0 10px var(--roxo);
+}
+
+/* ------------------------------- formulário -------------------------------- */
+
+.ctt-ajuda {
+  max-width: 44ch;
+  margin: 14px 0 26px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--cinza);
+}
+
+.ctt-campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.ctt-largo {
+  grid-column: 1 / -1;
+}
+
+.ctt-campo {
+  width: 100%;
+  padding: 16px 18px;
+  font-family: var(--fonte-display);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--branco);
+  background: var(--card);
+  border: 1px solid var(--linha);
+  border-radius: 12px;
+  transition: var(--transicao);
+}
+
+.ctt-campo::placeholder {
+  color: var(--cinza-2);
+  letter-spacing: 0.14em;
+}
+
+.ctt-campo:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+.ctt-campo:focus {
+  outline: none;
+  border-color: var(--roxo);
+  background: rgba(139, 92, 246, 0.06);
+}
+
+.ctt-area {
+  resize: vertical;
+  min-height: 130px;
+  line-height: 1.6;
+}
+
+/* seta do select */
+.ctt-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--cinza);
+}
+
+.ctt-select select {
+  appearance: none;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.ctt-select select option {
+  background: var(--card);
+  color: var(--branco);
+}
+
+.ctt-select svg {
+  position: absolute;
+  right: 18px;
+  pointer-events: none;
+}
+
+.ctt-erro {
+  margin-top: 14px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: #ff8080;
+}
+
+.ctt-enviar {
+  justify-content: center;
+  width: 100%;
+  margin-top: 18px;
+}
+
+/* -------------------------------- contatos --------------------------------- */
+
+.ctt-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ctt-linha {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--linha);
+}
+
+.ctt-ico {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  color: var(--roxo-claro);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: 12px;
+  transition: var(--transicao);
+}
+
+.ctt-txt {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.ctt-rotulo {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--cinza-2);
+}
+
+.ctt-valor {
+  font-size: 12.5px;
+  color: var(--branco);
+  word-break: break-word;
+}
+
+.ctt-clicavel:hover .ctt-ico {
+  color: #fff;
+  background: var(--roxo);
+  border-color: var(--roxo);
+}
+
+.ctt-clicavel:hover .ctt-valor {
+  color: var(--roxo-claro);
+}
+
+/* ------------------------------- responsivo -------------------------------- */
+
+@media (max-width: 1080px) {
+  .ctt-in {
+    grid-template-columns: 1fr 1fr;
+  }
+  .ctt-chamada {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 860px) {
+  .ctt {
+    padding: 112px 0 70px;
+  }
+  .ctt-in {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .ctt-palavras {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+  }
+}
+
+@media (max-width: 560px) {
+  .ctt-campos {
+    grid-template-columns: 1fr;
+  }
+}
