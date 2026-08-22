@@ -8,11 +8,10 @@
 export const MOCKUPS = [
   {
     id: "adidas-jersey",
-    nome: "ADIDAS JERSEY MOCKUP PACK",
+    nome: "MOCKUP GOLA REDONDA",
     categoria: "CAMISAS",
-    capa: "", // 1000x1000
-    precoPessoal: 59.9,
-    precoComercial: 119.9,
+    capa: "./imagens/mockup_01.png", // 1000x1000
+    preco: 59.9,
     lancamento: "2026-05", // usado na ordenação
     destaque: true,
 
@@ -43,8 +42,7 @@ export const MOCKUPS = [
     nome: "NIKE JERSEY MOCKUP PACK",
     categoria: "CAMISAS",
     capa: "",
-    precoPessoal: 59.9,
-    precoComercial: 119.9,
+    preco: 59.9,
     lancamento: "2026-04",
     destaque: true,
     resumo: "Camisa em modelagem Nike, pronta para receber sua arte com acabamento realista.",
@@ -68,8 +66,7 @@ export const MOCKUPS = [
     nome: "TRAINING TOP MOCKUP PACK",
     categoria: "TREINO",
     capa: "",
-    precoPessoal: 59.9,
-    precoComercial: 119.9,
+    preco: 59.9,
     lancamento: "2026-03",
     destaque: false,
     resumo: "Blusa de treino manga longa para apresentar coleções completas de linha de treino.",
@@ -93,8 +90,7 @@ export const MOCKUPS = [
     nome: "TEMPLATE BUILDER PREMIUM",
     categoria: "TEMPLATES",
     capa: "",
-    precoPessoal: 49.9,
-    precoComercial: 99.9,
+    preco: 49.9,
     lancamento: "2026-02",
     destaque: true,
     resumo: "Sistema de templates para montar uniformes completos direto no Photoshop.",
@@ -118,8 +114,7 @@ export const MOCKUPS = [
     nome: "BASKETBALL JERSEY MOCKUP PACK",
     categoria: "BASQUETE",
     capa: "",
-    precoPessoal: 59.9,
-    precoComercial: 119.9,
+    preco: 59.9,
     lancamento: "2026-01",
     destaque: false,
     resumo: "Regata de basquete com caimento realista para apresentações de coleção.",
@@ -143,8 +138,7 @@ export const MOCKUPS = [
     nome: "POLO SHIRT MOCKUP PACK",
     categoria: "ACESSÓRIOS",
     capa: "",
-    precoPessoal: 49.9,
-    precoComercial: 99.9,
+    preco: 49.9,
     lancamento: "2025-12",
     destaque: false,
     resumo: "Camisa polo para linhas de viagem, comissão técnica e produtos institucionais.",
@@ -183,8 +177,8 @@ export function listarMockups(categoria = "TODOS", ordem = "recentes") {
     categoria === "TODOS" ? [...MOCKUPS] : MOCKUPS.filter((m) => m.categoria === categoria);
 
   return filtrados.sort((a, b) => {
-    if (ordem === "menor") return a.precoPessoal - b.precoPessoal;
-    if (ordem === "maior") return b.precoPessoal - a.precoPessoal;
+        if (ordem === "menor") return a.preco - b.preco;
+    if (ordem === "maior") return b.preco - a.preco;
     return String(b.lancamento).localeCompare(String(a.lancamento));
   });
 }

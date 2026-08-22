@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { acharMockup, listarMockups, formatarPreco } from "../data/mockups";
 import { linkWhatsapp } from "../utils/links";
 import Media from "../components/ui/Media";
@@ -16,24 +16,15 @@ const GARANTIAS = [
 
 export default function MockupProduto({ id, ir, abrirMockup }) {
   const mockup = acharMockup(id);
-  const [licenca, setLicenca] = useState("pessoal");
   
-
-  /* troca de produto: volta ao estado inicial */
-  useEffect(() => {
-    setLicenca("pessoal");
-    
-  }, [id]);
 
   if (!mockup) {
     return <EmConstrucao aba="mockups" ir={ir} titulo="MOCKUP NÃO ENCONTRADO" rotulo="MOCKUPS" />;
   }
 
-  const preco = licenca === "pessoal" ? mockup.precoPessoal : mockup.precoComercial;
+    const preco = mockup.preco;
 
-  const mensagem =
-    `Olá, Ícaro! Quero comprar o ${mockup.nome} ` +
-    `(licença ${licenca}, ${formatarPreco(preco)}).`;
+    const mensagem = `Olá, Ícaro! Quero comprar o ${mockup.nome} (${formatarPreco(preco)}).`;
 
   const outros = listarMockups().filter((m) => m.id !== mockup.id).slice(0, 3);
 
@@ -58,23 +49,7 @@ export default function MockupProduto({ id, ir, abrirMockup }) {
               <h1 className="prod-nome">{mockup.nome}</h1>
               <p className="prod-resumo">{mockup.resumo}</p>
 
-              <div className="prod-licencas">
-                {[
-                  { id: "pessoal", label: "LICENÇA PESSOAL", valor: mockup.precoPessoal },
-                  { id: "comercial", label: "LICENÇA COMERCIAL", valor: mockup.precoComercial },
-                ].map((op) => (
-                  <button
-                    key={op.id}
-                    className={`prod-licenca ${licenca === op.id ? "is-ativa" : ""}`}
-                    onClick={() => setLicenca(op.id)}
-                    aria-pressed={licenca === op.id}
-                  >
-                    <span className="prod-radio" aria-hidden="true" />
-                    <span className="prod-licenca-lbl mono">{op.label}</span>
-                    <span className="prod-licenca-valor">{formatarPreco(op.valor)}</span>
-                  </button>
-                ))}
-              </div>
+              
 
               <div className="prod-preco">
                 <span className="mono">À VISTA</span>

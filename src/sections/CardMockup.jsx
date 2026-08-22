@@ -17,7 +17,7 @@ export default function CardMockup({ mockup, onAbrir }) {
         <h3 className="mk-nome">{mockup.nome}</h3>
 
         <div className="mk-rodape">
-          <span className="mk-preco">{formatarPreco(mockup.precoPessoal)}</span>
+          <span className="mk-preco">{formatarPreco(mockup.preco)}</span>
           <span className="mk-seta" aria-hidden="true">
             <Seta size={12} />
           </span>

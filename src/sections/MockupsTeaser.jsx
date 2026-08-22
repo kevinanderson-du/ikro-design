@@ -35,7 +35,7 @@ export default function MockupsTeaser({ ir }) {
               <div className="mock-info">
                 <h3 className="mock-nome">{m.nome}</h3>
                                 <span className="mock-pack mono">{m.categoria}</span>
-                <span className="mock-preco">{formatarPreco(m.precoPessoal)}</span>
+                <span className="mock-preco">{formatarPreco(m.preco)}</span>
               </div>
             </button>
           ))}
