@@ -5,15 +5,16 @@
 export const PROJETOS = [
   {
     id: "atletico-mineiro",
-    tag: "FUTEBOL",
-    titulo: "crusero",
-    sub: "Uniforme 2026",
+    tag: "UNIFORME",
+    titulo: "Vôlei Brasil",
+    sub: "Uniforme 2025",
     cliente: "Clube Atlético Mineiro",
-    ano: "2026",
+    ano: "2025",
     servicos: ["Design de Uniforme", "Direção Criativa", "Pesquisa"],
-    capa: "/imagens/teste-kaio-jorge.jpg",
+    capa: "/imagens/thumb cv volei.webp",
     galeria: [], // imagens da página interna do projeto
     destaque: true,
+    linkBehance: "https://www.behance.net/gallery/255376237/Volei-Brasil-Uniformes-2026"
   },
   {
     id: "vasco-da-gama",

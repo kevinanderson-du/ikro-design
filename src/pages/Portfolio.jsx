@@ -79,7 +79,19 @@ export default function Portfolio({ ir, abrirProjeto }) {
           {projetos.length > 0 ? (
             <div className="port-grid">
               {projetos.map((p) => (
-                <CardCatalogo key={p.id} projeto={p} onAbrir={abrirProjeto} />
+                p.linkBehance ? (
+                  <a 
+                    key={p.id} 
+                    href={p.linkBehance} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: "none", color: "inherit", display: "block" }}
+                  >
+                    <CardCatalogo projeto={p} onAbrir={() => {}} />
+                  </a>
+                ) : (
+                  <CardCatalogo key={p.id} projeto={p} onAbrir={abrirProjeto} />
+                )
               ))}
             </div>
           ) : (
