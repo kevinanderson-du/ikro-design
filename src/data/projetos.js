@@ -4,7 +4,7 @@
 
 export const PROJETOS = [
   {
-    id: "atletico-mineiro",
+    id: "cb-volei",
     tag: "UNIFORME",
     titulo: "Vôlei Brasil",
     sub: "Uniforme 2025",
