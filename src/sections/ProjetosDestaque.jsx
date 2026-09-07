@@ -16,16 +16,8 @@ export default function ProjetosDestaque({ ir, abrirProjeto }) {
         <Eyebrow>PROJETOS EM DESTAQUE</Eyebrow>
 
         <div className="est-controles">
-          <button className="est-seta" onClick={() => empurrar(-1)} aria-label="Voltar">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M15 5l-7 7 7 7" />
-            </svg>
-          </button>
-          <button className="est-seta" onClick={() => empurrar(1)} aria-label="Avançar">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+          
+          
 
           <button className="link-mais mono" onClick={() => ir("portfolio")}>
             VER TODOS <Seta size={12} />
