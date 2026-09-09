@@ -1,149 +1,104 @@
+/* ==========================================================================
+   BANNER PRINCIPAL — imagem única + botão por cima
+   ========================================================================== */
+
 .hero {
+  /* o espaço do header fica no fundo escuro do site, para o menu
+     branco não sumir em cima da arte clara */
+  padding-top: var(--altura-header);
+  background: var(--preto);
+}
+
+.hero-arte {
   position: relative;
-  overflow: hidden;
-  padding: 150px 0 90px;
-  border-bottom: 1px solid var(--linha);
+  line-height: 0; /* tira a folga que o navegador deixa embaixo da imagem */
 }
 
-/* malha sutil ao fundo, some nas bordas */
-.hero-grid {
+.hero-arte img {
+  width: 100%;
+  height: auto;
+}
+
+/* ---------------------- posição do botão sobre a arte ---------------------
+   Em % da imagem, então ele acompanha o banner quando a tela muda de tamanho.
+   Ajuste estes dois valores até encaixar no lugar do botão desenhado.
+   -------------------------------------------------------------------------- */
+
+.hero-botao {
   position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.032) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.032) 1px, transparent 1px);
-  background-size: 64px 64px;
-  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 100%);
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 100%);
-}
+  left: 20%; /* distância da esquerda */
+  top: 79%; /* distância do topo */
+  transform: translate(-50%, -50%);
 
-.hero-glow {
-  position: absolute;
-  top: 8%;
-  right: -6%;
-  width: 620px;
-  height: 620px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--roxo-glow), transparent 65%);
-  filter: blur(20px);
-}
-
-.hero-in {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: 40px;
+  display: inline-flex;
   align-items: center;
+  gap: 10px;
+  padding: 15px 26px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  color: #1a1a1f;
+  white-space: nowrap;
+
+  border: 1px solid var(--roxo);
+  border-radius: 999px;
+  background: transparent;
+  transition: var(--transicao);
 }
 
-.hero-nome {
-  margin: 18px 0 20px;
-  font-size: clamp(40px, 10.5vw, 120px);
-  font-weight: 900;
-  line-height: 0.86;
-  letter-spacing: -0.035em;
+.hero-botao:hover {
+  color: #fff;
+  background: var(--roxo);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.35);
 }
 
-.hero-nome span {
-  display: block;
-}
+/* --------------------------- marcador sem imagem --------------------------- */
 
-.hero-cargo {
-  font-size: 10.5px;
-  letter-spacing: 0.24em;
-  color: var(--roxo-claro);
-}
-
-.hero-resumo {
-  max-width: 34ch;
-  margin: 10px 0 30px;
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--cinza);
-}
-
-.hero-img {
-  position: relative;
-  width: 500px;
-  
-}
-
-.hero-img::after {
-  content: "";
-  position: absolute;
-  left: 6%;
-  right: 6%;
-  bottom: -14px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--roxo), transparent);
-}
-
-.hero-side {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%) rotate(180deg);
-  writing-mode: vertical-rl;
-  font-size: 9.5px;
-  letter-spacing: 0.34em;
-  color: var(--cinza-2);
-}
-
-.hero-scroll {
-  position: absolute;
-  left: var(--padding-lateral);
-  bottom: 30px;
+.hero-slot {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
-  font-size: 9.5px;
-  letter-spacing: 0.28em;
+  justify-content: center;
+  gap: 8px;
+  aspect-ratio: 2400 / 1040;
+  line-height: 1.6;
+  font-size: 10px;
+  letter-spacing: 0.18em;
   color: var(--cinza-2);
+  text-align: center;
+  background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0 10px, transparent 10px 20px),
+    var(--card);
+  border: 1px dashed rgba(255, 255, 255, 0.16);
 }
 
-.hero-scroll-line {
-  width: 54px;
+.hero-slot span {
+  font-size: 9px;
+  color: var(--cinza-2);
+  opacity: 0.7;
+}
+
+/* ------------------------- título só para buscadores ----------------------- */
+
+.hero-titulo-oculto {
+  position: absolute;
+  width: 1px;
   height: 1px;
-  background: linear-gradient(90deg, var(--roxo), transparent);
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
-.reveal {
-  animation: sobe 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
+/* -------------------------------- responsivo ------------------------------- */
 
-.reveal-2 {
-  animation-delay: 0.12s;
-}
-
-@keyframes sobe {
-  from {
-    opacity: 0;
-    transform: translateY(26px);
+@media (max-width: 700px) {
+  .hero-botao {
+    /* na arte vertical o botão costuma ficar em outro ponto */
+    left: 50%;
+    top: 86%;
+    padding: 13px 22px;
+    font-size: 10.5px;
   }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@media (max-width: 860px) {
-  .hero {
-    padding: 120px 0 70px;
-  }
-  .hero-in {
-    grid-template-columns: 1fr;
-    gap: 34px;
-  }
-  .hero-resumo {
-    max-width: none;
-  }
-  .hero-side,
-  .hero-scroll {
-    display: none;
-  }
-}
-
-.espaço {
-  margin-top: -20px; /* Puxa o elemento para cima */
-  
 }
