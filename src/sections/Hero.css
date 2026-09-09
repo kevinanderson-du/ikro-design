@@ -1,5 +1,7 @@
 /* ==========================================================================
-   BANNER PRINCIPAL — imagem única + botão por cima
+   BANNER PRINCIPAL — arte em camadas
+   Todas as posições estão em % da imagem: o conjunto acompanha a tela.
+   Mexa só nos valores marcados com <-- para encaixar na arte.
    ========================================================================== */
 
 .hero {
@@ -19,15 +21,83 @@
   height: auto;
 }
 
-/* ---------------------- posição do botão sobre a arte ---------------------
-   Em % da imagem, então ele acompanha o banner quando a tela muda de tamanho.
-   Ajuste estes dois valores até encaixar no lugar do botão desenhado.
+/* --------------------------- 1. palavra animada ---------------------------
+   Peça ao designer o nome da fonte usada em "DESIGN" e troque em
+   --fonte-banner. Sem isso, entra a fonte do site como aproximação.
    -------------------------------------------------------------------------- */
+
+.hero-palavra {
+  --fonte-banner: var(--fonte-display);
+
+  position: absolute;
+  left: 25.2%; /* <-- centro horizontal da palavra */
+  top: 56.3%; /* <-- centro vertical da palavra */
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+
+  font-family: var(--fonte-banner);
+  font-size: 3.1vw; /* <-- tamanho (acompanha a largura da tela) */
+  font-weight: 500;
+  letter-spacing: 0.42em; /* <-- espaço entre as letras */
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--roxo);
+}
+
+/* o cursor piscando da máquina de escrever */
+.hero-cursor {
+  display: inline-block;
+  width: 0.06em;
+  height: 1em;
+  margin-left: -0.3em; /* compensa o espaçamento entre letras */
+  background: var(--roxo);
+  animation: piscar 1s steps(2, start) infinite;
+}
+
+.hero-registrado {
+  margin-left: 0.5em;
+  font-size: 0.42em;
+  letter-spacing: 0;
+  align-self: flex-start;
+  margin-top: 0.35em;
+}
+
+@keyframes piscar {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ------------------------- 2. barrinha flutuando --------------------------- */
+
+.hero-barra {
+  position: absolute;
+  left: 57%; /* <-- centro horizontal da barrinha */
+  top: 78%; /* <-- centro vertical da barrinha */
+  width: 34% !important;/* <-- largura, em % do banner */
+  transform: translate(-50%, -50%);
+  animation: flutuar-barra 2.6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes flutuar-barra {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(-50%, calc(-50% - 10px));
+  }
+}
+
+/* ------------------------------- 3. botão ---------------------------------- */
 
 .hero-botao {
   position: absolute;
-  left: 20%; /* distância da esquerda */
-  top: 79%; /* distância do topo */
+  left: 20%; /* <-- distância da esquerda */
+  top: 79%; /* <-- distância do topo */
   transform: translate(-50%, -50%);
 
   display: inline-flex;
@@ -74,7 +144,6 @@
 
 .hero-slot span {
   font-size: 9px;
-  color: var(--cinza-2);
   opacity: 0.7;
 }
 
@@ -94,11 +163,30 @@
 /* -------------------------------- responsivo ------------------------------- */
 
 @media (max-width: 700px) {
+  /* na arte vertical tudo muda de lugar — ajuste aqui separadamente */
+  .hero-palavra {
+    left: 50%;
+    top: 46%;
+    font-size: 7vw;
+    letter-spacing: 0.34em;
+  }
+
+  .hero-barra {
+    left: 50%;
+    top: 72%;
+    width: 82%;
+  }
+
   .hero-botao {
-    /* na arte vertical o botão costuma ficar em outro ponto */
     left: 50%;
     top: 86%;
     padding: 13px 22px;
     font-size: 10.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-cursor {
+    display: none;
   }
 }

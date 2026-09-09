@@ -1,16 +1,24 @@
 import { CONFIG } from "../data/config";
+import { useMaquinaEscrever } from "../hooks/useMaquinaEscrever";
 import Seta from "../components/ui/Seta";
 import "./Hero.css";
 
+/* Palavras que se alternam embaixo do IK·RO */
+const PALAVRAS = ["DESIGN", "STUDIO"];
+
 /* ==========================================================================
-   BANNER PRINCIPAL
-   A arte é uma imagem só (feita pelo designer). O único elemento de código
-   por cima é o botão — posição ajustável no Hero.css, em porcentagem,
-   para acompanhar a imagem em qualquer largura de tela.
+   BANNER PRINCIPAL — arte em camadas
+   1. imagem de fundo (sem a palavra DESIGN e sem a barrinha cinza)
+   2. palavra sendo escrita e apagada
+   3. barrinha cinza flutuando
+   4. botão
+   Cada camada é posicionada em % da imagem, então tudo acompanha o
+   tamanho da tela. Os valores ficam no Hero.css.
    ========================================================================== */
 
 export default function Hero({ ir }) {
-  const { banner, bannerMobile } = CONFIG.imagens;
+  const { banner, bannerMobile, bannerBarra } = CONFIG.imagens;
+  const palavra = useMaquinaEscrever(PALAVRAS);
 
   return (
     <section className="hero">
@@ -28,9 +36,21 @@ export default function Hero({ ir }) {
           </picture>
         ) : (
           <div className="hero-slot mono">
-            BANNER · 2400×1040 (desktop)
+            BANNER · 2400×1040 (sem a palavra DESIGN e sem a barrinha)
             <span>e uma versão vertical para celular</span>
           </div>
+        )}
+
+        {/* ------------------------- palavra animada ------------------------- */}
+        <span className="hero-palavra" aria-label={PALAVRAS.join(" / ")}>
+          <span aria-hidden="true">{palavra}</span>
+          <span className="hero-cursor" aria-hidden="true" />
+          <span className="hero-registrado" aria-hidden="true">®</span>
+        </span>
+
+        {/* ------------------------ barrinha flutuando ----------------------- */}
+        {bannerBarra && (
+          <img className="hero-barra" src={bannerBarra} alt="" aria-hidden="true" />
         )}
 
         <button className="hero-botao" onClick={() => ir("portfolio")}>
