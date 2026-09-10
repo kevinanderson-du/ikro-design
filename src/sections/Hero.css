@@ -163,30 +163,22 @@
 /* -------------------------------- responsivo ------------------------------- */
 
 @media (max-width: 700px) {
-  /* na arte vertical tudo muda de lugar — ajuste aqui separadamente */
   .hero-palavra {
-    left: 50%;
-    top: 46%;
-    font-size: 7vw;
-    letter-spacing: 0.34em;
+    left: 26%;   /* <-- centro horizontal */
+    top: 45%;    /* <-- centro vertical */
+    font-size: 6vw;
+    letter-spacing: 0.38em;
   }
 
+  /* no esboço do celular não tem a barrinha */
   .hero-barra {
-    left: 50%;
-    top: 72%;
-    width: 82%;
+    display: none;
   }
 
   .hero-botao {
-    left: 50%;
-    top: 86%;
+    left: 23%;
+    top: 82%;
     padding: 13px 22px;
     font-size: 10.5px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-cursor {
-    display: none;
   }
 }
