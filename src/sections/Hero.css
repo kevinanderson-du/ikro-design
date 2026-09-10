@@ -164,21 +164,21 @@
 
 @media (max-width: 700px) {
   .hero-palavra {
-    left: 26%;   /* <-- centro horizontal */
-    top: 45%;    /* <-- centro vertical */
-    font-size: 6vw;
-    letter-spacing: 0.38em;
+    left: 24.5%;
+    top: 45%;
+    font-size: 5.6vw;
+    letter-spacing: 0.36em;
   }
 
-  /* no esboço do celular não tem a barrinha */
+  /* no celular a barrinha não entra */
   .hero-barra {
     display: none;
   }
 
   .hero-botao {
     left: 23%;
-    top: 82%;
-    padding: 13px 22px;
-    font-size: 10.5px;
+    top: 87.5%;
+    padding: 12px 20px;
+    font-size: 10px;
   }
 }
