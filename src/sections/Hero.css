@@ -164,20 +164,19 @@
 
 @media (max-width: 900px) {
   .hero-palavra {
-    left: 24.5%;
-    top: 45%;
-    font-size: 5.6vw;
-    letter-spacing: 0.36em;
+    left: 23%;
+    top: 51%;
+    font-size: 4.2vw;
+    letter-spacing: 0.34em;
   }
 
-  /* no celular a barrinha não entra */
   .hero-barra {
     display: none;
   }
 
   .hero-botao {
-    left: 23%;
-    top: 87.5%;
+    left: 24%;
+    top: 84%;
     padding: 12px 20px;
     font-size: 10px;
   }
