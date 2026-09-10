@@ -33,7 +33,7 @@ export const CONFIG = {
   imagens: {
 
     banner: "/imagens/BANNER_IKRO_DEF.png",       // ~2400x1040 — arte do banner (desktop)
-    bannerMobile: "/imagens/BANNER IKRO MOBILE.png", // ~1080x1350 — versão vertical (opcional)
+    bannerMobile: "/imagens/BANNER_IKRO_MOBILE.png", // ~1080x1350 — versão vertical (opcional)
     bannerBarra: "/imagens/barrinha.png",
 
     hero: "",  // PNG sem fundo, ~1200x1400
