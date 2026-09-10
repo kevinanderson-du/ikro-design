@@ -164,9 +164,9 @@
 
 @media (max-width: 900px) {
   .hero-palavra {
-    left: 23%;
-    top: 51%;
-    font-size: 4.2vw;
+    left: 26%;
+    top: 41%;
+    font-size: 6.2vw;
     letter-spacing: 0.34em;
   }
 
@@ -175,8 +175,8 @@
   }
 
   .hero-botao {
-    left: 24%;
-    top: 84%;
+    left: 25%;
+    top: 68%;
     padding: 12px 20px;
     font-size: 10px;
   }
