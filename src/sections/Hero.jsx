@@ -31,7 +31,7 @@ export default function Hero({ ir }) {
       <div className="hero-arte">
         {banner ? (
           <picture>
-            {bannerMobile && <source media="(max-width: 700px)" srcSet={bannerMobile} />}
+            {bannerMobile && <source media="(max-width: 900px)" srcSet={bannerMobile} />}
             <img src={banner} alt={`${CONFIG.nome.join(" ")} — ${CONFIG.resumo}`} />
           </picture>
         ) : (
