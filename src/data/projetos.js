@@ -24,7 +24,7 @@ export const PROJETOS = [
     cliente: "Canal Reversão",
     ano: "2025",
     servicos: ["Design de Uniforme"],
-    capa: "/imagens/REVERSAO.png",
+    capa: "/imagens/REVERSAO.jpg",
     galeria: [],
     destaque: true,
     linkBehance: "https://www.behance.net/gallery/255769411/Uniformes-Canal-Reversao"
@@ -44,39 +44,56 @@ export const PROJETOS = [
   },
   {
     id: "logitech-g",
-    tag: "BRANDING",
+    tag: "UNIFORME",
     titulo: "LOGITECH G",
-    sub: "Identidade visual",
+    sub: "BGS 2023",
     cliente: "Logitech G",
     ano: "2024",
     servicos: ["Identidade Visual", "Direção Criativa"],
-    capa: "",
+    capa: "/imagens/logitech.png",
     galeria: [],
     destaque: true,
+    linkBehance: "https://www.behance.net/gallery/184902621/Jersey-Logitech-BGS-EDITION"
   },
   {
     id: "ceara-sc",
-    tag: "FUTEBOL",
+    tag: "UNIFORME",
     titulo: "CEARÁ SC",
-    sub: "Uniforme 2024",
+    sub: "Camisa III - 2020",
     cliente: "Ceará SC",
     ano: "2024",
     servicos: ["Design de Uniforme"],
-    capa: "",
+    capa: "/imagens/ceara.png",
     galeria: [],
     destaque: true,
+    linkBehance: "https://www.behance.net/gallery/148583827/Uniforme-III-Ceara-SC-2020"
   },
   {
     id: "comite-olimpico",
     tag: "BRANDING",
     titulo: "COMITÊ OLÍMPICO",
-    sub: "Identidade visual",
+    sub: "Olímpiadas Paris 2024",
     cliente: "Comitê Olímpico do Brasil",
     ano: "2024",
     servicos: ["Identidade Visual"],
-    capa: "",
+    capa: "/imagens/time_brasil.png",
     galeria: [],
     destaque: true,
+    linkBehance: "https://www.behance.net/gallery/206699317/SM-OLIMPIADAS-PARIS-2024"
+  },
+
+  {
+    id: "america-mg",
+    tag: "UNIFORME",
+    titulo: "AMÉRICA-MG",
+    sub: "Camisa III - 2022",
+    cliente: "América-mg",
+    ano: "2022",
+    servicos: ["Design de Uniforme"],
+    capa: "/imagens/america.png",
+    galeria: [],
+    destaque: true,
+    linkBehance: "https://www.behance.net/gallery/173994225/UNIFORME-III-Amrica-FC-2022"
   },
 ];
 
